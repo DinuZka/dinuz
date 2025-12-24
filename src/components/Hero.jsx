@@ -1,8 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function Hero() {
+gsap.registerPlugin(ScrollTrigger);
+
+const Hero = () => {
   useGSAP(() => {
     const heroSplit = new SplitText(".title", {
       type: "chars, words",
@@ -12,7 +15,7 @@ function Hero() {
     });
 
     // Apply text-gradient class once before animating
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    // heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
     gsap.from(heroSplit.chars, {
       yPercent: 100,
@@ -29,14 +32,16 @@ function Hero() {
       delay: 1,
     });
 
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: "#hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+      .to(".arm", { x: 300, y: 300 }, 0);
   }, []);
 
   return (
@@ -44,6 +49,9 @@ function Hero() {
       <section id="hero" className="noisy">
         <h1 className="title">DINUSHKA</h1>
         <h2 className="title">MADUSHAN</h2>
+
+        <img src="/images/arm.png" alt="robot-arm" className="arm" />
+
         <div className="container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5">
           <div className="flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-autot">
             <div className="space-y-5 hidden md:block">
@@ -71,6 +79,6 @@ function Hero() {
       </section>
     </>
   );
-}
+};
 
 export default Hero;

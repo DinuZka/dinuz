@@ -1,0 +1,121 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+// About.jsx
+// - Tailwind CSS based responsive About section matching the provided design
+// - Default export a React component
+// - Props: imageSrc (string), socials (array of {label, href}), email
+// Usage: import About from './About.jsx' and include <About /> in your page
+
+function About({
+  imageSrc = "/Screenshot 2025-12-24 040322.png",
+  socials = [
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/dinushka",
+      text: "/dinushka",
+    },
+    { label: "GitHub", href: "https://github.com/dinuzka", text: "/dinuzka" },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/dinushka",
+      text: "/dinushka",
+    },
+  ],
+  email = "dinushkamadushan440@gmail.com",
+}) {
+  return (
+    <section id="about" className="noisy w-full text-white py-5 px-1 md:px-">
+      <div className="max-w-full mx-auto flex flex-col md:flex-row items-center md:items-start  justify-around gap-5 lg:gap-100 md:gap-10 px-5 md:px-0">
+        {/* Left column: image + contacts */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="md:col-span-5"
+        >
+          <div className="px-2 ">
+            <div className="w-full aspect-square overflow-hidden md:size-100 size-80 lg:size-125">
+              <img
+                src="/images/me.jpg"
+                alt="Dinushka"
+                className="w-full h-full object-cover block filter grayscale-[20%] mix-blend-normal"
+              />
+            </div>
+
+            <div className="mt-6 text-sm text-gray-300">
+              <div className="grid grid-cols-1 gap-3">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-between hover:text-white"
+                  >
+                    <span className="font-medium text-gray-200">{s.label}</span>
+                    <span className="text-sm text-gray-400">{s.text}</span>
+                  </a>
+                ))}
+
+                <div className="pt-2 border-t border-[#222]">
+                  <div className="text-xs text-gray-400">Email</div>
+                  <a
+                    href={`mailto:${email}`}
+                    className="block mt-1 text-sm break-all text-gray-300 hover:text-white"
+                  >
+                    {email}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right column: heading + paragraphs */}
+        <motion.div
+          initial={{ opacity: 0, x: 8 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="md:col-span-7 flex flex-col justify-start"
+        >
+          <div>
+            <h2 className="text-[120px] leading-[0.9] font-bold tracking-tight text-white md:mb-6 hidden md:block">
+              INFO
+            </h2>
+
+            <div className="md:mt-0">
+              <p className="mt-20 text-lg md:text-[25px] text-gray-100 max-w-prose">
+                I’m <strong>Dinushka</strong>, a Computer Science undergraduate
+                at <strong>UCSC</strong>, passionate about building functional
+                and visually appealing web experiences.
+              </p>
+
+              <p className="mt-6 text-lg md:text-[25px] text-gray-100">
+                Skilled in <strong>HTML, CSS, JavaScript, Python, PHP,</strong>{" "}
+                and <strong>React</strong>.
+              </p>
+
+              <p className="mt-8 text-lg md:text-[25px] font-semibold text-gray-100 max-w-prose">
+                I continuously learn and create to grow as a software engineer
+                building impactful digital products.
+              </p>
+
+              {/* Optional: a small CTA or download resume button */}
+              <div className="mt-8">
+                <a
+                  href="#projects"
+                  className="inline-block px-5 py-3  bg-white text-black font-medium shadow-sm hover:opacity-90"
+                >
+                  View projects
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+export default About;

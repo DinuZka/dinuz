@@ -20,6 +20,12 @@ body {
 @utility flex-center {
   @apply flex justify-center items-center;
 }
+@utility text-gradient {
+  background: linear-gradient(to bottom, #ffffff, #898989);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 @layer components {
   main {
@@ -43,16 +49,19 @@ body {
     }
   }
   .noisy {
-    @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
+    @apply inset-0 size-full bg-[url("/images/noise.png")];
   }
   #hero {
     @apply relative z-10 min-h-dvh w-full border border-transparent;
 
     h1 {
-      @apply md:mt-32 mt-40 text-6xl md:text-[10vw] leading-none text-center md:text-left font-modern-negra;
+      @apply md:mt-40 mt-40 text-6xl md:text-[10vw] leading-none text-center md:text-left font-modern-negra;
     }
     h2 {
       @apply md:-mt-4 -mt-3 text-6xl md:text-[10vw] leading-none text-center md:text-left font-modern-negra;
+    }
+    .arm {
+      @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/2 md:w-fit md:size-2/4;
     }
   }
 }

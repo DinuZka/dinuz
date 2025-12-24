@@ -1,10 +1,13 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
+import "./Navbar.css";
 import { navLinks } from "./index.js";
 import ButtonWithIcon from "./ButtonWithIcon.jsx";
 import { useState } from "react";
-import "./Navbar.css";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,9 +25,16 @@ const Navbar = () => {
       { backgroundColor: "transparent" },
       {
         backgroundColor: "#00000050",
-        backgroundFilter: "blur(10px)",
+        backdropFilter: "blur(10px)",
+        webkitBackdropFilter: "blur(10px)",
         duration: 1,
         ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: document.body,
+          start: "top -80",
+          end: "top top",
+          scrub: true,
+        },
       }
     );
   });
@@ -33,7 +43,7 @@ const Navbar = () => {
     <nav>
       <div>
         <a href="#home" className="flex items-center gap-2">
-          <p>DinuZ</p>
+          <p>DZ</p>
         </a>
 
         {/* hamburger button */}

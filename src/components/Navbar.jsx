@@ -4,8 +4,10 @@ import "./Navbar.css";
 import { navLinks } from "./index.js";
 import ButtonWithIcon from "./ButtonWithIcon.jsx";
 import { useState } from "react";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MdArrowOutward } from "react-icons/md";
+
+import arrowSvg from "/images/arrow.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,7 +64,7 @@ const Navbar = () => {
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
-          <ButtonWithIcon />
+          <ButtonWithIcon Name="Contact" Icon={MdArrowOutward} />
         </ul>
       </div>
     </nav>

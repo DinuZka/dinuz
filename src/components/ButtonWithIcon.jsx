@@ -1,17 +1,15 @@
 import React from "react";
 
-function ButtonWithIcon() {
+function ButtonWithIcon({ Name, Icon, onClick, className = "" }) {
   return (
     <button
-      type="button"
-      className="group hover:bg-white inline-flex items-center bg-[var(--color-white)] text-black bg-brand hover:bg-brand-strong box-border border border-transparent font-medium text-base px-4 py-3.5 cursor-pointer transition-all"
+      onClick={onClick}
+      className={`group hover:bg-white inline-flex items-center bg-[var(--color-white)] text-black bg-brand hover:bg-brand-strong box-border border border-transparent font-medium text-base px-4 py-3.5 cursor-pointer transition-all duration-200 ${className}`}
     >
-      Contact
-      <img
-        src="./images/arrow.svg"
-        alt="arrow"
-        className="group-hover:translate-x-1 size-5 transition-all duration-400"
-      />
+      {Name}
+      {Icon && (
+        <Icon className="ml-2 w-6 h-6 group-hover:translate-x-1 group-hover:text-[var(--color-blue)] transition-all duration-400" />
+      )}
     </button>
   );
 }

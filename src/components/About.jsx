@@ -1,6 +1,9 @@
-import React from "react";
 import { motion } from "framer-motion";
-
+import { PiLinkedinLogo } from "react-icons/pi";
+import { SiReaddotcv } from "react-icons/si";
+import { LiaGithubSquare, LiaFacebookSquare } from "react-icons/lia";
+import CopyText from "./CopyText";
+import DownloadCVButton from "./DownloadedButton";
 // About.jsx
 // - Tailwind CSS based responsive About section matching the provided design
 // - Default export a React component
@@ -8,24 +11,33 @@ import { motion } from "framer-motion";
 // Usage: import About from './About.jsx' and include <About /> in your page
 
 function About({
-  imageSrc = "/Screenshot 2025-12-24 040322.png",
   socials = [
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/dinushka",
-      text: "/dinushka",
+      href: "www.linkedin.com/in/dinushka-madhushan-kumara-a40082281",
+      text: "/dinushka-madhushan-kumara",
+      icon: <PiLinkedinLogo size={25} className="ml-2" />,
     },
-    { label: "GitHub", href: "https://github.com/dinuzka", text: "/dinuzka" },
+    {
+      label: "GitHub",
+      href: "https://github.com/dinuzka",
+      text: "/DinuZka",
+      icon: <LiaGithubSquare size={25} className="ml-2" />,
+    },
     {
       label: "Facebook",
-      href: "https://www.facebook.com/dinushka",
-      text: "/dinushka",
+      href: "https://www.facebook.com/profile.php?id=100085211013166",
+      text: "/Dinushka",
+      icon: <LiaFacebookSquare size={25} className="ml-2" />,
     },
   ],
-  email = "dinushkamadushan440@gmail.com",
+  email = <CopyText email="dinushkamadushan440@gmail.com" />,
 }) {
   return (
-    <section id="about" className="noisy w-full text-white py-5 px-1 md:px-">
+    <section
+      id="about"
+      className="noisy w-full min-h-dvh text-white py-10 px-1 md:px-1"
+    >
       <div className="max-w-full mx-auto flex flex-col md:flex-row items-center md:items-start  justify-around gap-5 lg:gap-100 md:gap-10 px-5 md:px-0">
         {/* Left column: image + contacts */}
         <motion.div
@@ -53,8 +65,12 @@ function About({
                     rel="noreferrer"
                     className="flex items-center justify-between hover:text-white"
                   >
-                    <span className="font-medium text-gray-200">{s.label}</span>
-                    <span className="text-sm text-gray-400">{s.text}</span>
+                    <span className="font-medium text-gray-200 flex items-center hover:text-[var(--color-blue)] transition-all duration-200">
+                      {s.label} {s.icon}
+                    </span>
+                    <span className="text-sm text-gray-400 hover:text-white transition-all duration-200">
+                      {s.text}
+                    </span>
                   </a>
                 ))}
 
@@ -84,31 +100,25 @@ function About({
               INFO
             </h2>
 
-            <div className="md:mt-0">
-              <p className="mt-20 text-lg md:text-[25px] text-gray-100 max-w-prose">
+            <div className="md:mt-0 w-full flex flex-col items-center md:items-start">
+              <p className="mt-20 text-lg md:text-[23px] text-gray-100 max-w-prose">
                 I’m <strong>Dinushka</strong>, a Computer Science undergraduate
                 at <strong>UCSC</strong>, passionate about building functional
                 and visually appealing web experiences.
               </p>
 
-              <p className="mt-6 text-lg md:text-[25px] text-gray-100">
+              <p className="mt-6 text-lg md:text-[23px] text-gray-100 max-w-prose">
                 Skilled in <strong>HTML, CSS, JavaScript, Python, PHP,</strong>{" "}
                 and <strong>React</strong>.
               </p>
 
-              <p className="mt-8 text-lg md:text-[25px] font-semibold text-gray-100 max-w-prose">
+              <p className="mt-8 text-lg md:text-[23px] font-semibold text-gray-100 max-w-prose">
                 I continuously learn and create to grow as a software engineer
                 building impactful digital products.
               </p>
 
-              {/* Optional: a small CTA or download resume button */}
               <div className="mt-8">
-                <a
-                  href="#projects"
-                  className="inline-block px-5 py-3  bg-white text-black font-medium shadow-sm hover:opacity-90"
-                >
-                  View projects
-                </a>
+                <DownloadCVButton />
               </div>
             </div>
           </div>

@@ -1,14 +1,34 @@
 import { motion } from "framer-motion";
 import { PiLinkedinLogo } from "react-icons/pi";
-import { SiReaddotcv } from "react-icons/si";
 import { LiaGithubSquare, LiaFacebookSquare } from "react-icons/lia";
-import CopyText from "./CopyText";
-import DownloadCVButton from "./DownloadedButton";
+import CopyText from "../components/CopyText";
+import DownloadCVButton from "../components/DownloadedButton";
+import LogoLoop from "../components/LogoLoop";
+import { SiReact, SiHtml5, SiJavascript, SiTailwindcss } from "react-icons/si";
 // About.jsx
 // - Tailwind CSS based responsive About section matching the provided design
 // - Default export a React component
 // - Props: imageSrc (string), socials (array of {label, href}), email
 // Usage: import About from './About.jsx' and include <About /> in your page
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  {
+    node: <SiHtml5 />,
+    title: "HTML5",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    node: <SiJavascript />,
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    node: <SiTailwindcss />,
+    title: "Tailwind CSS",
+    href: "https://tailwindcss.com",
+  },
+];
 
 function About({
   socials = [
@@ -34,11 +54,8 @@ function About({
   email = <CopyText email="dinushkamadushan440@gmail.com" />,
 }) {
   return (
-    <section
-      id="about"
-      className="noisy w-full min-h-dvh text-white py-10 px-1 md:px-1"
-    >
-      <div className="max-w-full mx-auto flex flex-col md:flex-row items-center md:items-start  justify-around gap-5 lg:gap-100 md:gap-10 px-5 md:px-0">
+    <section id="about" className="noisy w-full min-h-dvh text-white py-10">
+      <div className="max-w-full px-1 mx-auto flex flex-col md:flex-row items-center md:items-start  justify-around gap-5 lg:gap-100 md:gap-10 px-5 md:px-0">
         {/* Left column: image + contacts */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -124,6 +141,18 @@ function About({
           </div>
         </motion.div>
       </div>
+      <LogoLoop
+        logos={techLogos}
+        speed={120}
+        direction="left"
+        logoHeight={48}
+        gap={40}
+        hoverSpeed={0}
+        scaleOnHover
+        fadeOut
+        fadeOutColor="#0C0C0C"
+        ariaLabel="Technology partners"
+      />
     </section>
   );
 }

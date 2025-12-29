@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <nav>
       <div>
-        <a href="#home" className="flex items-center gap-2">
+        <a href="#home" className="flex items-center gap-2 z-50">
           <p>DZ</p>
         </a>
 
@@ -60,7 +60,11 @@ const Navbar = () => {
 
         <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
           {navLinks.map((link) => (
-            <li key={link.id} onClick={() => setMenuOpen(false)}>
+            <li
+              key={link.id}
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-[var(--color-blue)] transition-all duration-200"
+            >
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}

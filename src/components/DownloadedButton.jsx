@@ -38,7 +38,9 @@ const DownloadCVButton = () => {
         </>
       ) : (
         <>
-          <span>Career Snapshot</span>
+          <span className="group-hover:text-[var(--color-blue)] transition-all duration-300">
+            Career Snapshot
+          </span>
           <SiReaddotcv className="ml-2 group-hover:translate-x-1 group-hover:text-[var(--color-blue)] transition-all duration-400 text-xl" />
         </>
       )}

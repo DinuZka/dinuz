@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap");
+
 @import "tailwindcss";
 
 html,
@@ -8,6 +10,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   cursor: none;
+  font-family: "Roboto", sans-serif;
 }
 .cursor {
   width: 40px;
@@ -39,9 +42,6 @@ body {
   --color-white: #f1f1f1;
   --color-white-100: #efefef;
   --color-blue: #0ba6df;
-  --font-sans: "Mona Sans", sans-serif;
-  --font-modern-negra: "Modern Negra", sans-serif;
-  --font-serif: "DM Serif Text", serif;
 }
 
 @utility flex-center {
@@ -61,14 +61,14 @@ body {
   nav {
     @apply fixed z-50 w-full;
     div {
-      @apply flex md:flex-row md:justify-between items-center gap-5 py-5 lg:px-0 px-5 container mx-auto;
+      @apply flex md:flex-row md:justify-between items-center gap-5 py-5  px-5 lg:px-8 container mx-auto;
     }
     p {
-      @apply text-3xl font-medium;
+      @apply text-3xl font-light;
     }
 
     a {
-      @apply cursor-pointer text-nowrap md:text-base text-sm;
+      @apply cursor-pointer text-nowrap md:text-base text-sm font-light;
     }
 
     ul {
@@ -82,10 +82,10 @@ body {
     @apply relative z-10 min-h-dvh w-full border border-transparent;
 
     h1 {
-      @apply md:mt-40  mt-50 text-7xl md:text-[10vw] leading-none text-left font-bold md:text-left font-modern-negra;
+      @apply md:mt-40  mt-50 text-7xl md:text-[10vw] leading-none text-left font-bold md:font-extrabold md:text-left;
     }
     h2 {
-      @apply md:-mt-4 -mt-2 text-6xl md:text-[10vw] leading-none text-left font-light md:font-bold md:text-left font-modern-negra;
+      @apply md:-mt-4 -mt-2 text-7xl md:text-[10vw] leading-none text-left font-bold md:font-extrabold md:text-left;
     }
     .arm {
       @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/3 md:top-1/2 md:w-fit md:size-2/4;

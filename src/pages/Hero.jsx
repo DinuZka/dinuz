@@ -41,7 +41,7 @@ const Hero = () => {
           scrub: true,
         },
       })
-      .to(".arm", { x: 300, y: 300 }, 0);
+      .to(".arm", { x: 260, y: 600 }, 0);
   }, []);
 
   return (
@@ -50,7 +50,12 @@ const Hero = () => {
         <h1 className="title">DINUSHKA</h1>
         <h2 className="title">MADUSHAN</h2>
 
-        <img src="/images/arm.png" alt="robot-arm" className="arm" />
+        <img
+          data-aos="fade-up-left"
+          src="/images/arm.png"
+          alt="robot-arm"
+          className="arm"
+        />
 
         <div className="container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5 h-1/2">
           <div className="flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto">

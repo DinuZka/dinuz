@@ -1,0 +1,18 @@
+.container img.swipeimage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .container img.swipeimage {
+    height: 150px;
+  }
+}

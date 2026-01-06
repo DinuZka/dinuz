@@ -3,10 +3,11 @@ import React from "react";
 function ButtonWithIcon({ Name, Icon, onClick, className = "" }) {
   return (
     <button
+      data-aos="fade-up"
       onClick={onClick}
       className={`group hover:bg-white inline-flex items-center bg-[var(--color-white)] text-black bg-brand hover:bg-brand-strong box-border border border-transparent font-medium text-base px-4 py-3.5 cursor-pointer transition-all duration-200 ${className}`}
     >
-      <span className="group-hover:text-[var(--color-blue)] transition-all duration-300">
+      <span className="group-hover:text-[var(--color-blue)] transition-all duration-300 font-medium">
         {Name}
       </span>
       {Icon && (

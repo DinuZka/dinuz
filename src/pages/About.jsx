@@ -5,6 +5,7 @@ import CopyText from "../components/CopyText";
 import DownloadCVButton from "../components/DownloadedButton";
 import LogoLoop from "../components/LogoLoop";
 import { SiReact, SiHtml5, SiJavascript, SiTailwindcss } from "react-icons/si";
+
 // About.jsx
 // - Tailwind CSS based responsive About section matching the provided design
 // - Default export a React component
@@ -34,7 +35,7 @@ function About({
   socials = [
     {
       label: "LinkedIn",
-      href: "www.linkedin.com/in/dinushka-madhushan-kumara-a40082281",
+      href: "https://www.linkedin.com/in/dinushka-madhushan-kumara-a40082281",
       text: "/dinushka-madhushan-kumara",
       icon: <PiLinkedinLogo size={25} className="ml-2" />,
     },
@@ -63,7 +64,7 @@ function About({
           transition={{ duration: 0.6 }}
           className="md:col-span-5"
         >
-          <div className="px-2 ">
+          <div data-aos="fade-up" className="px-2 ">
             <div className="w-full aspect-square overflow-hidden md:size-100 size-80 lg:size-125">
               <img
                 src="/images/me.jpg"
@@ -76,6 +77,7 @@ function About({
               <div className="grid grid-cols-1 gap-3">
                 {socials.map((s) => (
                   <a
+                    data-aos="fade-right"
                     key={s.label}
                     href={s.href}
                     target="_blank"
@@ -92,8 +94,11 @@ function About({
                 ))}
 
                 <div className="pt-2 border-t border-[#222]">
-                  <div className="text-xs text-gray-400">Email</div>
+                  <div data-aos="fade-right" className="text-xs text-gray-400">
+                    Email
+                  </div>
                   <a
+                    data-aos="fade-right"
                     href={`mailto:${email}`}
                     className="block mt-1 text-sm break-all text-gray-300 hover:text-white"
                   >
@@ -113,28 +118,40 @@ function About({
           className="md:col-span-7 flex flex-col justify-start"
         >
           <div>
-            <h2 className="text-[120px] leading-[0.9] font-bold tracking-tight text-white md:mb-6 hidden md:block">
+            <h2
+              data-aos="fade-up"
+              className="text-[120px] leading-[0.9] font-bold tracking-tight text-white md:mb-6 hidden md:block"
+            >
               INFO
             </h2>
 
-            <div className="md:mt-0 w-full flex flex-col items-center md:items-start">
-              <p className="mt-20 text-lg md:text-[23px] text-gray-100 max-w-prose">
+            <div className=" textParalax md:mt-0 w-full flex flex-col items-center md:items-start">
+              <p
+                data-aos="fade-up"
+                className=" mt-20 text-lg md:text-[23px] text-gray-100 max-w-prose"
+              >
                 I’m <strong>Dinushka</strong>, a Computer Science undergraduate
                 at <strong>UCSC</strong>, passionate about building functional
                 and visually appealing web experiences.
               </p>
 
-              <p className="mt-6 text-lg md:text-[23px] text-gray-100 max-w-prose">
+              <p
+                data-aos="fade-up"
+                className="mt-6 text-lg md:text-[23px] text-gray-100 max-w-prose"
+              >
                 Skilled in <strong>HTML, CSS, JavaScript, Python, PHP,</strong>{" "}
                 and <strong>React</strong>.
               </p>
 
-              <p className="mt-8 text-lg md:text-[23px] font-semibold text-gray-100 max-w-prose">
+              <p
+                data-aos="fade-up"
+                className="mt-8 text-lg md:text-[23px] font-semibold text-gray-100 max-w-prose"
+              >
                 I continuously learn and create to grow as a software engineer
                 building impactful digital products.
               </p>
 
-              <div className="mt-8">
+              <div data-aos="fade-up" className="mt-15">
                 <DownloadCVButton />
               </div>
             </div>

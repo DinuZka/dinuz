@@ -1,17 +1,15 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./Navbar.css";
-import { navLinks } from "./index.js";
-import ButtonWithIcon from "./ButtonWithIcon.jsx";
-import { useState } from "react";
+import { navLinks } from "./NavList.js";
+import { useState, useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MdArrowOutward } from "react-icons/md";
-
-import arrowSvg from "/images/arrow.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
+  const navRef = useRef(null);
+  const logoRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useGSAP(() => {
@@ -39,12 +37,30 @@ const Navbar = () => {
         },
       }
     );
+
+    const ctx = gsap.context(() => {
+      gsap.from(navRef.current, {
+        y: -60,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      gsap.from(logoRef.current, {
+        y: -20,
+        opacity: 0,
+        duration: 0.8,
+        delay: 0.3,
+      });
+    }, navRef);
+
+    return () => ctx.revert(); // cleanup (important)
   });
 
   return (
-    <nav>
+    <nav ref={navRef}>
       <div>
-        <a href="#home" className="flex items-center gap-2 z-50">
+        <a href="#hero" ref={logoRef} className="flex items-center gap-2 z-50">
           <p>DZ</p>
         </a>
 
@@ -59,7 +75,7 @@ const Navbar = () => {
         </div>
 
         <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
-          {navLinks.map((link) => (
+          {navLinks.slice(1, 4).map((link, i) => (
             <li
               key={link.id}
               onClick={() => setMenuOpen(false)}
@@ -68,7 +84,6 @@ const Navbar = () => {
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
-          <ButtonWithIcon Name="Contact" Icon={MdArrowOutward} />
         </ul>
       </div>
     </nav>

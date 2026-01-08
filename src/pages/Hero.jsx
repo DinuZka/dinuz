@@ -52,7 +52,7 @@ const Hero = () => {
 
         <img
           data-aos="fade-up-left"
-          src="/images/arm.png"
+          src={`${import.meta.env.BASE_URL}/images/arm.png`}
           alt="robot-arm"
           className="arm"
         />

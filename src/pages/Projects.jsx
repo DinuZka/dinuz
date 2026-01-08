@@ -9,16 +9,20 @@ const items = [
     title: "Web UX/UI",
     description:
       "Crafting immersive, high-performance websites with motion and purpose.",
-    image: "/images/p1.png",
+    image: "`${import.meta.env.BASE_URL}/images/p1.png`",
   },
   {
     id: "02",
     title: "Digital Products",
     description:
       "Crafting immersive, high-performance websites with motion and purpose.",
-    image: "/images/p2.png",
+    image: "`${import.meta.env.BASE_URL}/images/p2.png`",
   },
-  { id: "03", title: "Branding", image: "/images/p3.png" },
+  {
+    id: "03",
+    title: "Branding",
+    image: "`${import.meta.env.BASE_URL}/images/p3.png`",
+  },
 ];
 
 export default function Projects() {

@@ -67,7 +67,7 @@ function About({
           <div data-aos="fade-up" className="px-2 ">
             <div className="w-full aspect-square overflow-hidden md:size-100 size-80 lg:size-125">
               <img
-                src="/images/me.jpg"
+                src={`${import.meta.env.BASE_URL}/images/me.png`}
                 alt="Dinushka"
                 className="w-full h-full object-cover block filter grayscale-[20%] mix-blend-normal"
               />

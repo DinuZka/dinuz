@@ -5,7 +5,7 @@ import CopyText from "../components/CopyText";
 import DownloadCVButton from "../components/DownloadedButton";
 import LogoLoop from "../components/LogoLoop";
 import { SiReact, SiHtml5, SiJavascript, SiTailwindcss } from "react-icons/si";
-
+import TextHighlightScroll from "../components/textHighlighter";
 // About.jsx
 // - Tailwind CSS based responsive About section matching the provided design
 // - Default export a React component
@@ -55,122 +55,138 @@ function About({
   email = <CopyText email="dinushkamadushan440@gmail.com" />,
 }) {
   return (
-    <section id="about" className="noisy w-full min-h-dvh text-white pt-10">
-      <div className="max-w-full px-1 mx-auto flex flex-col md:flex-row items-center md:items-start  justify-around gap-5 lg:gap-100 md:gap-10 px-5 md:px-0">
-        {/* Left column: image + contacts */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="md:col-span-5"
-        >
-          <div data-aos="fade-up" className="px-2 ">
-            <div className="w-full aspect-square overflow-hidden md:size-100 size-80 lg:size-125">
-              <img
-                src={`${import.meta.env.BASE_URL}/images/me.webp`}
-                alt="Dinushka"
-                className="w-full h-full object-cover block filter grayscale-[20%] mix-blend-normal"
-              />
-            </div>
+    <>
+      <TextHighlightScroll />
+      <section id="about" className="noisy w-full min-h-dvh text-white pt-10">
+        <div className="max-w-full px-1 mx-auto flex flex-col md:flex-row items-center md:items-start  justify-around gap-5 lg:gap-100 md:gap-10 px-5 md:px-0">
+          {/* Left column: image + contacts */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-5"
+          >
+            <div data-aos="fade-up" className="px-2 ">
+              <div className="w-full aspect-square overflow-hidden md:size-100 size-80 lg:size-125">
+                <img
+                  src={`${import.meta.env.BASE_URL}/images/me.webp`}
+                  alt="Dinushka"
+                  className="w-full h-full object-cover block filter grayscale-[20%] mix-blend-normal"
+                />
+              </div>
 
-            <div className="mt-6 text-sm text-gray-300">
-              <div className="grid grid-cols-1 gap-3">
-                {socials.map((s) => (
-                  <a
-                    data-aos="fade-right"
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between hover:text-white"
-                  >
-                    <span className="font-medium text-gray-200 flex items-center hover:text-[var(--color-blue)] transition-all duration-200">
-                      {s.label} {s.icon}
-                    </span>
-                    <span className="text-sm text-gray-400 hover:text-white transition-all duration-200">
-                      {s.text}
-                    </span>
-                  </a>
-                ))}
+              <div className="mt-6 text-sm text-gray-300">
+                <div className="grid grid-cols-1 gap-3">
+                  {socials.map((s) => (
+                    <a
+                      data-aos="fade-right"
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-between hover:text-white"
+                    >
+                      <span className="font-medium text-gray-200 flex items-center hover:text-[var(--color-blue)] transition-all duration-200">
+                        {s.label} {s.icon}
+                      </span>
+                      <span className="text-sm text-gray-400 hover:text-white transition-all duration-200">
+                        {s.text}
+                      </span>
+                    </a>
+                  ))}
 
-                <div className="pt-2 border-t border-[#222]">
-                  <div data-aos="fade-right" className="text-xs text-gray-400">
-                    Email
+                  <div className="pt-2 border-t border-[#222]">
+                    <div
+                      data-aos="fade-right"
+                      className="text-xs text-gray-400"
+                    >
+                      Email
+                    </div>
+                    <a
+                      data-aos="fade-right"
+                      href={`mailto:${email}`}
+                      className="block mt-1 text-sm break-all text-gray-300 hover:text-white"
+                    >
+                      {email}
+                    </a>
                   </div>
-                  <a
-                    data-aos="fade-right"
-                    href={`mailto:${email}`}
-                    className="block mt-1 text-sm break-all text-gray-300 hover:text-white"
-                  >
-                    {email}
-                  </a>
                 </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Right column: heading + paragraphs */}
-        <motion.div
-          initial={{ opacity: 0, x: 8 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.12 }}
-          className="md:col-span-7 flex flex-col justify-start"
-        >
-          <div>
-            <h2
-              data-aos="fade-up"
-              className="text-[120px] leading-[0.9] font-bold tracking-tight text-white md:mb-6 hidden md:block"
-            >
-              INFO
-            </h2>
-
-            <div className=" textParalax md:mt-0 w-full flex flex-col items-center md:items-start">
-              <p
+          {/* Right column: heading + paragraphs */}
+          <motion.div
+            initial={{ opacity: 0, x: 8 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.12 }}
+            className="md:col-span-7 flex flex-col justify-start"
+          >
+            <div>
+              <h2
                 data-aos="fade-up"
-                className=" mt-20 text-lg md:text-[23px] text-gray-100 max-w-prose"
+                className="text-[120px] leading-[0.9] font-bold tracking-tight text-white md:mb-6 hidden md:block"
               >
-                I’m <strong>Dinushka</strong>, a Computer Science undergraduate
-                at <strong>UCSC</strong>, passionate about building functional
-                and visually appealing web experiences.
-              </p>
+                INFO
+              </h2>
 
-              <p
-                data-aos="fade-up"
-                className="mt-6 text-lg md:text-[23px] text-gray-100 max-w-prose"
+              <div
+                data-highlight="half"
+                className=" textParalax md:mt-0 w-full flex flex-col items-center md:items-start"
               >
-                Skilled in <strong>HTML, CSS, JavaScript, Python, PHP,</strong>{" "}
-                and <strong>React</strong>.
-              </p>
+                <p
+                  data-aos="fade-up"
+                  className=" mt-13 text-lg md:text-[23px] text-gray-100 max-w-prose mr-1"
+                >
+                  I’m <span className="text-highlight">Dinushka</span>, a
+                  Computer Science undergraduate at{" "}
+                  <span className="text-highlight">
+                    University of Colombo School of Computing (UCSC)
+                  </span>
+                  , passionate about building functional and visually appealing
+                  web experiences.
+                </p>
 
-              <p
-                data-aos="fade-up"
-                className="mt-8 text-lg md:text-[23px] font-semibold text-gray-100 max-w-prose"
-              >
-                I continuously learn and create to grow as a software engineer
-                building impactful digital products.
-              </p>
+                <p
+                  data-aos="fade-up"
+                  className="mt-6 text-lg md:text-[23px] text-gray-100 max-w-prose"
+                >
+                  Skilled in{" "}
+                  <span className="text-highlight">
+                    HTML, CSS, JavaScript, Python, PHP,
+                  </span>{" "}
+                  and <span className="text-highlight">React</span>.
+                </p>
 
-              <div data-aos="fade-up" className="mt-15">
-                <DownloadCVButton />
+                <p
+                  data-aos="fade-up"
+                  className="mt-8 text-lg md:text-[23px] font-semibold text-gray-100 max-w-prose"
+                >
+                  I continuously learn and create to grow as a software engineer
+                  building impactful digital products.
+                </p>
+
+                <div data-aos="fade-up" className="mt-15">
+                  <DownloadCVButton />
+                </div>
               </div>
             </div>
-          </div>
-        </motion.div>
-      </div>
-      <LogoLoop
-        logos={techLogos}
-        speed={120}
-        direction="left"
-        logoHeight={48}
-        gap={40}
-        hoverSpeed={0}
-        scaleOnHover
-        fadeOut
-        fadeOutColor="#0C0C0C"
-        ariaLabel="Technology partners"
-      />
-    </section>
+          </motion.div>
+        </div>
+        <LogoLoop
+          logos={techLogos}
+          speed={120}
+          direction="left"
+          logoHeight={48}
+          gap={40}
+          hoverSpeed={0}
+          scaleOnHover
+          fadeOut
+          fadeOutColor="#0C0C0C"
+          ariaLabel="Technology partners"
+        />
+      </section>
+    </>
   );
 }
 

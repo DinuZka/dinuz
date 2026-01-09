@@ -55,7 +55,7 @@ function About({
   email = <CopyText email="dinushkamadushan440@gmail.com" />,
 }) {
   return (
-    <section id="about" className="noisy w-full min-h-dvh text-white py-10">
+    <section id="about" className="noisy w-full min-h-dvh text-white pt-10">
       <div className="max-w-full px-1 mx-auto flex flex-col md:flex-row items-center md:items-start  justify-around gap-5 lg:gap-100 md:gap-10 px-5 md:px-0">
         {/* Left column: image + contacts */}
         <motion.div
@@ -67,7 +67,7 @@ function About({
           <div data-aos="fade-up" className="px-2 ">
             <div className="w-full aspect-square overflow-hidden md:size-100 size-80 lg:size-125">
               <img
-                src={`${import.meta.env.BASE_URL}/images/me.jpg`}
+                src={`${import.meta.env.BASE_URL}/images/me.webp`}
                 alt="Dinushka"
                 className="w-full h-full object-cover block filter grayscale-[20%] mix-blend-normal"
               />

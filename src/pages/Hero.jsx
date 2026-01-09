@@ -41,7 +41,7 @@ const Hero = () => {
           scrub: true,
         },
       })
-      .to(".arm", { x: 260, y: 600 }, 0);
+      .to(".arm", { x: 200, y: 150 }, 0);
   }, []);
 
   return (
@@ -52,7 +52,7 @@ const Hero = () => {
 
         <img
           data-aos="fade-up-left"
-          src={`${import.meta.env.BASE_URL}/images/arm.png`}
+          src={`${import.meta.env.BASE_URL}/images/arm.webp`}
           alt="robot-arm"
           className="arm"
         />

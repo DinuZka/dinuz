@@ -16,7 +16,7 @@ const ScrollReveal = ({
   containerClassName = "",
   textClassName = "",
   rotationEnd = "bottom bottom",
-  wordAnimationEnd = "bottom bottom",
+  wordAnimationEnd = "bottom bottom-=40%",
 }) => {
   const containerRef = useRef(null);
 
@@ -87,7 +87,7 @@ const ScrollReveal = ({
           scrollTrigger: {
             trigger: el,
             scroller,
-            start: "top bottom-=20%",
+            start: "top bottom",
             end: wordAnimationEnd,
             scrub: true,
           },

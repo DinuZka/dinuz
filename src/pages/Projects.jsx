@@ -9,19 +9,19 @@ const items = [
     title: "Web UX/UI",
     description:
       "Crafting immersive, high-performance websites with motion and purpose.",
-    image: `${import.meta.env.BASE_URL}/images/p1.png`,
+    image: `${import.meta.env.BASE_URL}/images/p1.webp`,
   },
   {
     id: "02",
     title: "Digital Products",
     description:
       "Crafting immersive, high-performance websites with motion and purpose.",
-    image: `${import.meta.env.BASE_URL}/images/p2.png`,
+    image: `${import.meta.env.BASE_URL}/images/p2.webp`,
   },
   {
     id: "03",
     title: "Branding",
-    image: `${import.meta.env.BASE_URL}/images/p3.png`,
+    image: `${import.meta.env.BASE_URL}/images/p3.webp`,
   },
 ];
 

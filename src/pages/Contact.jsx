@@ -85,8 +85,8 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-s opacity-50">
-        ©2026 Dinushka Madushan
+      <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm opacity-50">
+        © 2026 Dinushka Madushan
       </p>
     </section>
   );

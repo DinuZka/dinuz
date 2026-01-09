@@ -85,7 +85,7 @@ export default function Projects() {
               {/*Image*/}
               <img src={item.image} className="swipeimage" />
               {/* Number */}
-              <span className="text-sm text-[var(--color-white)] tracking-widest mt-4">
+              <span className="text-sm text-[var(--color-blue)] tracking-widest mt-4">
                 [{item.id}]
               </span>
 

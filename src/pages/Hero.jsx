@@ -72,12 +72,14 @@ const Hero = () => {
                 Full-Stack Web Developer from Sri Lanka. I craft responsive,
                 user-friendly websites using modern technologies.
               </p>
-              <a
-                href="#about"
-                className="font-semibold opacity-80 2xl:text-start text-right md:text-left subtitle"
-              >
-                More Info
-              </a>
+              <div className="w-25">
+                <a
+                  href="#about"
+                  className="font-semibold opacity-80 2xl:text-start text-right md:text-left subtitle"
+                >
+                  More Info
+                </a>
+              </div>
             </div>
           </div>
         </div>

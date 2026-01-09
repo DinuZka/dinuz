@@ -46,7 +46,7 @@ const Hero = () => {
 
   return (
     <>
-      <section id="hero" className="noisy relative">
+      <section id="hero" className="noisy">
         <h1 className="title">DINUSHKA</h1>
         <h2 className="title">MADUSHAN</h2>
 

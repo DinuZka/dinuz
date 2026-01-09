@@ -54,6 +54,7 @@ function About({
   ],
   email = <CopyText email="dinushkamadushan440@gmail.com" />,
 }) {
+  const isMobile = window.innerWidth < 768;
   return (
     <>
       <TextHighlightScroll />
@@ -70,7 +71,7 @@ function About({
               <div className="w-full aspect-square overflow-hidden md:size-100 size-80 lg:size-125">
                 <img
                   src={`${import.meta.env.BASE_URL}/images/me.webp`}
-                  alt="Dinushka"
+                  alt="Dinushka Madhushan - Web Developer Portrait"
                   className="w-full h-full object-cover block filter grayscale-[20%] mix-blend-normal"
                 />
               </div>
@@ -79,11 +80,12 @@ function About({
                 <div className="grid grid-cols-1 gap-3">
                   {socials.map((s) => (
                     <a
+                      aria-label={`Visit ${s.label} profile`}
                       data-aos="fade-right"
                       key={s.label}
                       href={s.href}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="flex items-center justify-between hover:text-white"
                     >
                       <span className="font-medium text-gray-200 flex items-center hover:text-[var(--color-blue)] transition-all duration-200">
@@ -136,7 +138,7 @@ function About({
               >
                 <p
                   data-aos="fade-up"
-                  className=" mt-13 text-lg md:text-[23px] text-gray-100 max-w-prose mr-1"
+                  className=" mt-6 md:mt-13 text-lg md:text-[23px] text-gray-100 max-w-prose mr-1"
                 >
                   I’m <span className="text-highlight">Dinushka</span>, a
                   Computer Science undergraduate at{" "}
@@ -166,7 +168,7 @@ function About({
                   building impactful digital products.
                 </p>
 
-                <div data-aos="fade-up" className="mt-15">
+                <div data-aos="fade-up" className="mt-8 md:mt-15">
                   <DownloadCVButton />
                 </div>
               </div>
@@ -175,13 +177,13 @@ function About({
         </div>
         <LogoLoop
           logos={techLogos}
-          speed={120}
+          speed={isMobile ? 60 : 120}
           direction="left"
           logoHeight={48}
           gap={40}
           hoverSpeed={0}
-          scaleOnHover
-          fadeOut
+          scaleOnHover={isMobile ? false : true}
+          fadeOut={isMobile ? false : true}
           fadeOutColor="#0C0C0C"
           ariaLabel="Technology partners"
         />

@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import useStackedScroll from "./components/useStackedScroll";
 import { useEffect, useState } from "react";
 import Loader from "./pages/Loader";
+import SmoothScroll from "./components/SmoothScroll";
 
 const App = () => {
   useStackedScroll();
@@ -29,15 +30,17 @@ const App = () => {
   return loading ? (
     <Loader />
   ) : (
-    <main className="overflow-visible">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <ScrollRevealPage />
-      <Contact />
+    <>
       <Cursor />
-    </main>
+      <SmoothScroll>
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <ScrollRevealPage />
+        <Contact />
+      </SmoothScroll>
+    </>
   );
 };
 

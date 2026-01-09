@@ -7,7 +7,7 @@ import DecryptedText from "../components/DecryptedText";
 export default function Contact() {
   const goToWhatsapp = () => {
     window.open(
-      "https://wa.me/0772468270?text=Hello%2C%20I%20would%20like%20to%20get%20in%20touch%20with%20you.",
+      "https://wa.me/+94772468270?text=Hello%2C%20I%20would%20like%20to%20get%20in%20touch%20with%20you.",
       "_blank"
     );
   };
@@ -36,7 +36,7 @@ export default function Contact() {
           className="text-sm hidden md:block md:flex md:flex-row items-center gap-2 opacity-80"
         >
           <PhoneCall size={14} />
-          <a href="tel:0772468270">077 24 68 270</a>
+          <a href="tel:+94772468270">+9477 24 68 270</a>
         </div>
       </div>
 
